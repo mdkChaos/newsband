@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru-RU" ng-app="MyModule">
+	<head>
+		<meta charset="utf-8">
+		<title>Новостная полоса</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="js/angular.js"></script>
+		<script src="js/script.js"></script>
+	</head>
+	<body ng-controller="MyCtrl">
+		<!--HEADER START-->
+		<header>
+			<div class="container">
+				<h1>НОВОСТНАЯ ПОЛОСА</h1>
+			</div>
+		</header>
+		<!--HEADER END-->
+		<!--NAVIGATION START-->
+		<nav>
+			<div class="container">
+				<ul>
+					<li><a href="#" class="active">Главная</a></li>
+					<li><a href="#">Каталог</a></li>
+					<li><a href="#">Статья</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!--NAVIGATION END-->
+		<!--MAIN START-->
+		<main ng-controller="MyCtrl">
+			<div class="container">
+			<!--BLOCK 1 START-->
+				<div class="block block1">
+					<input type="text" name="search" id="search" placeholder="Введите поисковый запрос">
+					<button id="searchbutton" ng-click="getNews()">Найти</button>
+					<div class="searchnews" ng-repeat="new in news">
+						<a href="#">
+							<img src="img/" + {{new.img}}>
+							<span>{{new.text}}...</span>
+							<button>Читать</button>
+						</a>
+					</div>
+					<!--
+					<div class="searchnews">
+						<a href="#">
+							<img src="img/1.png">
+							<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span>
+							<button>Читать</button>
+						</a>
+					</div>
+					<div class="searchnews">
+						<a href="#">
+							<img src="img/1.png">
+							<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span>
+							<button>Читать</button>
+						</a>
+					</div>
+					<div class="searchnews">
+						<a href="#">
+							<img src="img/1.png">
+							<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span>
+							<button>Читать</button>
+						</a>
+					</div>
+					<div class="searchnews">
+						<a href="#">
+							<img src="img/1.png">
+							<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span>
+							<button>Читать</button>
+						</a>
+					</div>
+					-->
+				</div>
+				<!--BLOCK 1 END-->
+				<!--BLOCK 2 START-->
+				<div class="block block2">
+					<table>
+						<tr id="titlenews">
+							<td><a href="#"><h2>Раздел 1</h2></a></td>
+							<td><a href="#"><h2>Раздел 2</h2></a></td>
+							<td><a href="#"><h2>Раздел 3</h2></a></td>
+							<td><a href="#"><h2>Раздел 4</h2></a></td>
+							<td><a href="#"><h2>Раздел 5</h2></a></td>
+						</tr>
+						<tr id="imagenews">
+							<td><a href="#"><img src="img/1.png"></a></td>
+							<td><a href="#"><img src="img/1.jpg"></a></td>
+							<td><a href="#"><img src="img/2.jpg"></a></td>
+							<td><a href="#"><img src="img/3.jpg"></a></td>
+							<td><a href="#"><img src="img/4.jpg"></a></td>
+						</tr>
+						<tr>
+							<td><a href="#">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</a></td>
+							<td><a href="#">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</a></td>
+							<td><a href="#">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</a></td>
+							<td><a href="#">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</a></td>
+							<td><a href="#">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</a></td>
+						</tr>
+					</table>
+				</div>
+				<!--BLOCK 2 END-->
+				<!--BLOCK 3 START-->
+				<div class="block block3">
+					<div class="randomnews">
+						<a href="#">
+							<img src="img/1.jpg">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+							<button>Читать</button>
+						</a>
+					</div>
+					<div class="randomnews">
+						<a href="#">
+							<img src="img/1.jpg">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+							<button>Читать</button>
+						</a>
+					</div>
+					<div class="randomnews">
+						<a href="#">
+							<img src="img/1.jpg">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+							<button>Читать</button>
+						</a>
+					</div>
+					<div class="randomnews">
+						<a href="#">
+							<img src="img/1.jpg">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+							<button>Читать</button>
+						</a>
+					</div>
+				</div>
+				<!--BLOCK 3 END-->
+				<!--BLOCK 4 START-->
+				<div class="block block4">
+					<div class="adr">
+						<p>Тел. +380671234567</p>
+						<p>Тел. +380671234567</p>
+						<p>Факс +380671234567</p>
+						<p>E-mail support@newsband.com</p>
+					</div>
+					<div class="adr">
+						<p>Украина, г. Киев,</p>
+						<p>ул. Банковая, 1а</p>
+					</div>
+				</div>
+				<!--BLOCK 4 END-->
+			</div>
+		</main>
+		<!--MAIN END-->
+		<!--FOOTER START-->
+		<footer>
+			<div class="container">
+				<p>Copyright &copy; Poludnev Andrey 2016</p>
+			</div>
+		</footer>
+		<!--FOOTER END-->
+	</body>
+</html>
