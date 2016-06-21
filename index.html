@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru-RU" ng-app="MyModule">
+<html ng-app="studyModule"	>
 	<head>
 		<meta charset="utf-8">
 		<title>Новостная полоса</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<script src="js/angular.js"></script>
+		<script src="angular.js"></script>
 		<script src="js/script.js"></script>
 	</head>
-	<body ng-controller="MyCtrl">
+	<body ng-controller="studyCtrl">
 		<!--HEADER START-->
 		<header>
 			<div class="container">
@@ -27,53 +27,23 @@
 		</nav>
 		<!--NAVIGATION END-->
 		<!--MAIN START-->
-		<main ng-controller="MyCtrl">
+		<main>
 			<div class="container">
 			<!--BLOCK 1 START-->
-				<div class="block block1">
-					<input type="text" name="search" id="search" placeholder="Введите поисковый запрос">
+				<div class="block1">
+					<input type="text" name="search" id="search" placeholder="Введите поисковый запрос" ng-model="searches">
 					<button id="searchbutton" ng-click="getNews()">Найти</button>
-					<div class="searchnews" ng-repeat="new in news">
+					<div class="searchnews" ng-repeat="new in news | filter:{text:searches} | orderBy: sortparam | limitTo: 5">
 						<a href="#">
-							<img src="img/" + {{new.img}}>
-							<span>{{new.text}}...</span>
+							<img src="img/{{new.img}}">
+							<span>{{new.text}}</span>
 							<button>Читать</button>
 						</a>
 					</div>
-					<!--
-					<div class="searchnews">
-						<a href="#">
-							<img src="img/1.png">
-							<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span>
-							<button>Читать</button>
-						</a>
-					</div>
-					<div class="searchnews">
-						<a href="#">
-							<img src="img/1.png">
-							<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span>
-							<button>Читать</button>
-						</a>
-					</div>
-					<div class="searchnews">
-						<a href="#">
-							<img src="img/1.png">
-							<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span>
-							<button>Читать</button>
-						</a>
-					</div>
-					<div class="searchnews">
-						<a href="#">
-							<img src="img/1.png">
-							<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span>
-							<button>Читать</button>
-						</a>
-					</div>
-					-->
 				</div>
 				<!--BLOCK 1 END-->
 				<!--BLOCK 2 START-->
-				<div class="block block2">
+				<div class="block2">
 					<table>
 						<tr id="titlenews">
 							<td><a href="#"><h2>Раздел 1</h2></a></td>
