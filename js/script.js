@@ -5,9 +5,6 @@ ang.controller("studyCtrl", function ($scope, $http) {
     $scope.getNews = function () {
         $http.get("data.json").success(function (responseData) {
         	$scope.news = responseData;
-        	for (var i = 0; i < $scope.news.length; i++) {
-        		$scope.news[i].text.length = 20;
-        	}
         })
     };
 });
