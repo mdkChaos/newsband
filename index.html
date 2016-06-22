@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<title>Новостная полоса</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<script src="js/angular.js"></script>
+		<script src="angular.js"></script>
 		<script src="js/script.js"></script>
 	</head>
 	<body ng-controller="studyCtrl">
@@ -33,7 +33,7 @@
 				<div class="block1">
 					<input type="text" name="search" id="search" placeholder="Введите поисковый запрос" ng-model="searches">
 					<button id="searchbutton" ng-click="getNews()">Найти</button>
-					<div class="searchnews" ng-repeat="new in news | filter:{text:searches} | orderBy: sortparam | limitTo: 5">
+					<div class="searchnews" ng-repeat="new in news | filter:{text:searches} | orderBy:sortparam | limitTo:5 | lengthOfString:100">
 						<a href="#">
 							<img src="img/{{new.img}}">
 							<span>{{new.text}}</span>
